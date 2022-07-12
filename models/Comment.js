@@ -9,6 +9,11 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    dateCreated: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW
+    },
   },
   {
     sequelize,  

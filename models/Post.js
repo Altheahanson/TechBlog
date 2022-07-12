@@ -5,9 +5,16 @@ class Post extends Model {}
 
 Post.init(
   {
-    title: DataTypes.STRING,
-    body: DataTypes.STRING,
-  },
+    title: {type: DataTypes.STRING},
+    body: {type: DataTypes.STRING},
+  
+
+  dateCreated: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: DataTypes.NOW
+  }},
+
   {
     sequelize,
     timestamps: false,
