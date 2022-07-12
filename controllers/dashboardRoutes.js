@@ -24,6 +24,13 @@ router.get('/', withAuth, async (req, res) => {
       }
     });
 
+    router.get('/new', withAuth, (req, res) => {
+      res.render("add-posts", {
+        layout: "dashboard"
+      })
+    });
+
+
     router.get('/edit/:id', async (req, res) => {
         try {
           const postData = await Post.findByPk(req.params.id)

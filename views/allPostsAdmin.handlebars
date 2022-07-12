@@ -1,17 +1,15 @@
-<div class="posts">
-  {{#each posts}}
-  <article class="card">
-    <div class="card-header flex-row justify-space-between">
-      <h2>
-        <a href="/post/{{id}}">{{title}}</a>
-      </h2>
-      <div>
-        Posted by {{User.username}} on 
+<div class="posts list-group"> {{#each posts}} 
+    <a href="/dashboard/edit/{{id}}" 
+    class= "list-item flex-row justify-space-between p-4 bg-link my-2 text-light"> 
+    <span>{{title}}</span> <span>{{createdAt}}</span>
+    </a>
+    {{/each}}
+    
+    
+    
+    
+    
+    
+    
+    
       </div>
-    </div>
-    <div class="card-body">
-      {{body}}
-    </div>
-  </article>
-  {{/each}}
-</div>
