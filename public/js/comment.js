@@ -7,7 +7,7 @@ const commentFormHandler = async (event) => {
   
     if (post_id && body) {
       const response = await fetch(`/api/comment`, {
-        method: 'Post',
+        method: 'POST',
         body: JSON.stringify({ post_id, body }),
         headers: {
           'Content-Type': 'application/json',
@@ -15,7 +15,7 @@ const commentFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/singlepost');
+        document.location.reload();
       } else {
         alert('Failed to create comment');
       }
@@ -25,5 +25,5 @@ const commentFormHandler = async (event) => {
   
   
   document
-    .querySelector('.new-comment-form')
+    .querySelector('#new-comment-form')
     .addEventListener('submit', commentFormHandler);
