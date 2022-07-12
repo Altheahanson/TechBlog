@@ -38,7 +38,7 @@ router.get('/', withAuth, async (req, res) => {
                 const post = postData.get({ plain: true})
             
       
-          res.render('editPost', {
+          res.render('edit', {
             layout:"dashboard",
             post
           });
